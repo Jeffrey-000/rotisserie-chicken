@@ -1,15 +1,12 @@
 import Image from "next/image";
 import Rotisserie from "@/public/rotisserie.jpg"
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <main className=""> 
-      <Image src={"/rotisserie.jpg"}
-      width={4160}
-      height={6240}
-      alt="chicken"
-      />
-      
+    <main className="">
+  
+
     </main>
   );
 }
