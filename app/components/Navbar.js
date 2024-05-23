@@ -17,15 +17,15 @@ import Link from 'next/link';
 
 
 const products = [
-  { name: 'Resume', description: 'Webview', href: '#', icon:  ComputerDesktopIcon},
-  { name: 'Resume', description: 'Download', href: '#', icon:  DocumentArrowDownIcon},
-  { name: 'GitHub', description: '', href: '#', icon: CloudIcon },
-  { name: 'LinkedIn', description: '', href: '#', icon: LinkIcon },
-  //{ name: 'Integrations', description: '', href: '#', icon: SquaresPlusIcon },
+  //{ name: 'Resume', description: 'Webview', href: '#', icon:  ComputerDesktopIcon},
+  //{ name: 'Resume', description: '', href: '#', icon:  DocumentArrowDownIcon},
+  //{ name: 'GitHub', description: '', href: '#', icon: CloudIcon },
+  { name: 'LinkedIn', description: '', href: 'https://www.linkedin.com/in/jeffrey-li-147721264/', icon: LinkIcon },
+  { name: 'Email', description: 'jeffrey.li@uga.edu', href: '#', icon: AtSymbolIcon },
   //{ name: 'Automations', description: '', href: '#', icon: ArrowPathIcon },
 ]
 const callsToAction = [
-  { name: 'Email', href: '#', icon: AtSymbolIcon },
+  //{ name: 'Email', href: '#', icon: AtSymbolIcon },
   //{ name: '', href: '#', icon: "" },
 ]
 
@@ -38,12 +38,12 @@ const NAVBAR_NAMES_AND_LINKS = [
     href: "#" //No link
   },
   {
-    name: "2",
-    href: "#"
+    name: "Resume",
+    href: "/resume"
   },
   {
-    name: "3",
-    href: "#"
+    name: "GitHub",
+    href: "https://github.com/Jeffrey-000"
   },
   {
     name: "4",
