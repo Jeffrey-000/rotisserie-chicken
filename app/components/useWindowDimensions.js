@@ -1,24 +1,28 @@
+'use client';
 import { useState, useEffect } from "react";
 
-function getDimensions() {
-    const {innerWidth, innerHeight} = window;
-    return {innerWidth, innerHeight};
-}
 
+const useWindowDimensions = () => {
 
-export default function useWindowDimensions(){
-    const [windowDimensions, setWindowDimensions] = useState(getDimensions());
-    
-
-    useEffect(() => { 
-        function handleResize() {
-            setWindowDimensions(getDimensions());
-        }
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize); 
-
+    const [width, setWidth] = useState(0)
+    const [height, setHeight] = useState(0)
+  
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    }
+  
+    useEffect(() => {
+      // component is mounted and window is available
+      handleWindowResize();
+      window.addEventListener('resize', handleWindowResize);
+      // unsubscribe from the event on component unmount
+      return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
-    return windowDimensions;
-}
-
-// https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
+  
+    return [width, height]
+  
+  }
+  
+  export default useWindowDimensions
+  //https://stackoverflow.com/questions/55151041/window-is-not-defined-in-next-js-react-app#:~:text=The%20error%20occurs,or%20window.innerWidth
